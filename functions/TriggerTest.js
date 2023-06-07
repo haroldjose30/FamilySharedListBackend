@@ -1,4 +1,16 @@
-exports = function(changeEvent) {
+exports = function (changeEvent) {
+
+  const fullDocument = changeEvent.fullDocumentBeforeChange;
+
+  const collection = context.services
+    .get("mongodb-atlas")
+    .db("FamilySharedListDB_PROD")
+    .collection("shoppingList_deleted");
+
+  collection.insertOne(fullDocument)
+    .then(result => console.log(`Successfully inserted item with _id: ${result.insertedId}`))
+    .catch(err => console.error(`Failed to insert item: ${err}`));
+
   /*
     A Database Trigger will always call a function with a changeEvent.
     Documentation on ChangeEvents: https://www.mongodb.com/docs/manual/reference/change-events
