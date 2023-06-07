@@ -1,0 +1,9 @@
+{
+    "app_id": "familysharedlistbackend-moyzo",
+    "config_version": 20210101,
+    "name": "FamilySharedListBackend",
+    "location": "IE",
+    "provider_region": "aws-eu-west-2",
+    "deployment_model": "LOCAL",
+    "environment": "development"
+}
