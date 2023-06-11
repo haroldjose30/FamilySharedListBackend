@@ -16,22 +16,7 @@ exports = function(request, response) {
     );
     
   if (doc.uuid == null) {
-    
-    const newDoc = context.services
-    .get("mongodb-atlas")
-    .db("Db_Account_Main")
-    .collection("Col_Account")
-    .insertOne(
-      {
-        'uuid': `${uuidAccount}`,
-        'createdDate': new Date(),
-        'updatedDate': new Date(),
-        'name': 'Guest',
-        'email': '',
-      }
-    );
-
-    return newDoc
+    return "doc null"
   }
 
   return doc
