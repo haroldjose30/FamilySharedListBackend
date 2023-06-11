@@ -11,7 +11,7 @@ exports = function(request, response) {
     .collection("Col_Account")
     .find(
       {
-        "uuid": uuidAccount
+        "uuid": `${uuidAccount}`
       }
     );
 
