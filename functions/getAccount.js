@@ -15,7 +15,7 @@ exports = function(request, response) {
       }
     );
     
-  if (doc == {}) {
+  if (doc.uuid == null) {
     return "doc null"
   }
 
