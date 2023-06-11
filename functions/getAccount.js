@@ -19,5 +19,5 @@ exports = function(request, response) {
     return "doc null"
   }
 
-  return doc
+  return "doc nao null"
 };
