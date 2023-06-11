@@ -7,5 +7,10 @@
     {
         "name": "helloworld",
         "private": false
+    },
+    {
+        "name": "getAccount",
+        "private": false
     }
+
 ]
