@@ -1,5 +1,5 @@
-exports = function(request, response) {
-  
+exports = function (request, response) {
+
   const uuidAccount = request.headers["Account-Id"];
   if (uuidAccount === undefined) {
     throw new Error(`header Account-Id was not defined.`);
@@ -14,10 +14,24 @@ exports = function(request, response) {
         "uuid": `${uuidAccount}`
       }
     );
-    
-  if (doc.uuid == null) {
-    return "doc null"
+
+  if (doc.uuid != null) {
+    return doc
   }
 
-  return doc
+  const newDoc = context.services
+    .get("mongodb-atlas")
+    .db("Db_Account_Main")
+    .collection("Col_Account")
+    .insertOne(
+      {
+        'uuid': `${uuidAccount}`,
+        'createdDate': new Date(),
+        'updatedDate': new Date(),
+        'name': 'Guest',
+        'email': '',
+      }
+    );
+
+    return newDoc
 };
