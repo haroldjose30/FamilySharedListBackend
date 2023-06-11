@@ -1,9 +1,8 @@
 exports = function(request, response) {
   
-  return request
-  const uuidAccount = request.headers["uuid-account"];
+  const uuidAccount = request.headers["UUID-ACCOUNT"];
   if (uuidAccount === undefined) {
-    throw new Error(`header uuid-account was not defined.`);
+    throw new Error(`header UUID-ACCOUNT was not defined.`);
   }
 
   // Querying a mongodb service:
