@@ -15,9 +15,9 @@ exports = function(request, response) {
       }
     );
     
-  if (doc === null) {
+  if (doc == {}) {
     return "doc null"
   }
 
-  return "doc nao null"
+  return doc
 };
