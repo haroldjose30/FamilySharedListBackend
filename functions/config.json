@@ -1,11 +1,11 @@
 [
     {
-        "name": "helloworld",
+        "name": "TriggerTest",
         "private": false,
-        "run_as_system": true
+        "disable_arg_logs": true
     },
     {
-        "name": "triggerTest",
-        "private": true
+        "name": "helloworld",
+        "private": false
     }
 ]
