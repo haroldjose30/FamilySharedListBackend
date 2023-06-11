@@ -1,6 +1,6 @@
-// This function is the endpoint's request handler.
 exports = function(request, response) {
   
+  return request
   const uuidAccount = request.headers["uuid-account"];
   if (uuidAccount === undefined) {
     throw new Error(`header uuid-account was not defined.`);

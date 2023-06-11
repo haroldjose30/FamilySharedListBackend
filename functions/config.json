@@ -1,16 +1,15 @@
 [
     {
+        "name": "helloworld",
+        "private": false
+    },
+    {
         "name": "TriggerTest",
         "private": false,
         "disable_arg_logs": true
     },
     {
-        "name": "helloworld",
-        "private": false
-    },
-    {
         "name": "getAccount",
         "private": false
     }
-
 ]
