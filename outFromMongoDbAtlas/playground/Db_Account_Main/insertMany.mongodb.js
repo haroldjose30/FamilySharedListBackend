@@ -1,6 +1,6 @@
-use('Db_Profile');
+use('Db_Account_Main');
 
-db.Col_Profile.insertMany(
+db.Col_Account.insertMany(
     [
         {
             'uuid': 'Db_Account_001',
@@ -39,4 +39,4 @@ db.Col_Profile.insertMany(
 
 
 // Run a find command to view items sold on April 4th, 2014.
-db.getCollection('Col_Profile').find({})
+db.getCollection('Col_Account').find({})
