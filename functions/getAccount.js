@@ -9,7 +9,7 @@ exports = function(request, response) {
     .get("mongodb-atlas")
     .db("Db_Account_Main")
     .collection("Col_Account")
-    .find(
+    .findOne(
       {
         "uuid": `${uuidAccount}`
       }
