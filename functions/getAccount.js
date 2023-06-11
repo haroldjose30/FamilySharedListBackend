@@ -14,6 +14,10 @@ exports = function(request, response) {
         "uuid": `${uuidAccount}`
       }
     );
+    
+  if (doc == null) {
+    return "doc null"
+  }
 
   return doc
 };
