@@ -5,7 +5,15 @@ exports = function(request, response) {
     throw new Error(`header Account-Id was not defined.`);
   }
 
-  const doc = context.services.get("mongodb-atlas").db("Db_Account_Main").collection("Col_Account").find();
+  const doc = context.services
+    .get("mongodb-atlas")
+    .db("Db_Account_Main")
+    .collection("Col_Account")
+    .find(
+      {
+        "uuid": uuidAccount
+      }
+    );
 
   return doc
 };
