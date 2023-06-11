@@ -15,7 +15,7 @@ exports = function (request, response) {
       }
     );
 
-  if (doc.uuid == uuidAccount) {
+  if (doc.uuid === uuidAccount) {
     return doc
   }
 
