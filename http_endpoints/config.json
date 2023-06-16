@@ -1,6 +1,6 @@
 [
     {
-        "route": "/CreateSampleDataForFirstAccess",
+        "route": "/account/CreateSampleDataForFirstAccess",
         "http_method": "POST",
         "function_name": "CreateSampleDataForFirstAccess",
         "validation_method": "NO_VALIDATION",
