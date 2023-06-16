@@ -1,6 +1,7 @@
 [
     {
-        "name": "Function_CreateSampleDataForFirstAccess",
-        "private": false
+        "name": "CreateSampleDataForFirstAccess",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
