@@ -15,7 +15,8 @@ exports = function({ query, headers, body}, response) {
 
     console.log("arg1, arg2: ", arg1, arg2);
     console.log("Content-Type:", JSON.stringify(contentTypes));
-    console.log("reqBody:", reqBody);
+    console.log("parsed_json:", parsed_json);
+    console.log("parsed_json.testeString:", parsed_json.testeString);
 
     // You can use 'context' to interact with other application features.
     // Accessing a value:
