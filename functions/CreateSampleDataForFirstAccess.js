@@ -21,12 +21,12 @@ exports = function({ body}, response) {
     const doc = context.services.get("FAMILYSHAREDLISTBACKEND0").db(uuid).collection("Col_MyLists").findOne();
 
     
-    if (doc === null) {
+    if (doc.name === undefined) {
      return `inserted new data: ${uuid}`
     }
     
-    //return doc;
-    return `listCount: ${doc} uuid:${uuid}`
+    return doc.name
+    //return `listCount: ${doc} uuid:${uuid}`
    
 
   //collection.insertOne(fullDocument)
