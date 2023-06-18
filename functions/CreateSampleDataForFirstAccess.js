@@ -26,7 +26,7 @@ exports = function({ body}, response) {
     .count;
     
     if (listCount === undefined) {
-     return "inserted new data"
+     return `inserted new data: ${uuid}`
     }
     
     return `listCount: ${listCount}`
