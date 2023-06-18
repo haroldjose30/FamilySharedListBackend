@@ -1,6 +1,8 @@
 // This function is the endpoint's request handler.
 exports = async function({ body}, response) {
   
+    const serviceName = "FAMILYSHAREDLISTBACKEND0"
+    const collectionName = "Col_MyLists"
   
     if (body === undefined) {
       throw new Error(`uuid was not defined.`);
@@ -18,28 +20,27 @@ exports = async function({ body}, response) {
       throw new Error(`uuid was not defined.`);
     }
 
-    const doc = await context.services.get("FAMILYSHAREDLISTBACKEND0").db(uuid).collection("Col_MyLists").findOne();
+    const doc = await context.services.get(serviceName).db(uuid).collection(collectionName).findOne();
     if (doc !== null) {
      return false
     }
     
-    return true
-   
-
-  //collection.insertOne(fullDocument)
-  //  .then(result => console.log(`Successfully inserted item with _id: ${result.insertedId}`))
-  //  .catch(err => console.error(`Failed to insert item: ${err}`));
-
-    // You can use 'context' to interact with other application features.
-    // Accessing a value:
-    // var x = context.values.get("value_name");
-
-    // Querying a mongodb service:
-    // const doc = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").findOne();
-
-    // Calling a function:
-    // const result = context.functions.execute("function_name", arg1, arg2);
-
-    // The return value of the function is sent as the response back to the client
-    // when the "Respond with Result" setting is set.
+    const insertData = [
+      {
+              "uuid": "sample1",
+              "name": "Bem vindo ao family share list",
+              "isCompleted": false,
+              "quantity": 1
+      },
+      {
+              "uuid": "sample2",
+              "name": "deslize o item para o lado para excluir",
+              "isCompleted": false,
+              "quantity": 1
+      }
+    ];
+    
+    
+    const insertResult = await context.services.get(serviceName).db(uuid).collection(collectionName).insertMany(insertData);
+    return insertResult
 };
