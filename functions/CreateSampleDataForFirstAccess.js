@@ -1,5 +1,5 @@
 // This function is the endpoint's request handler.
-exports = function({ body}, response) {
+exports = async function({ body}, response) {
   
   
     if (body === undefined) {
@@ -18,7 +18,7 @@ exports = function({ body}, response) {
       throw new Error(`uuid was not defined.`);
     }
 
-    const doc = context.services.get("FAMILYSHAREDLISTBACKEND0").db(uuid).collection("Col_MyLists").findOne();
+    const doc = await context.services.get("FAMILYSHAREDLISTBACKEND0").db(uuid).collection("Col_MyLists").findOne();
 
     
     if (doc.name === undefined) {
