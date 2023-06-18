@@ -42,5 +42,5 @@ exports = async function({ body}, response) {
     
     
     const insertResult = await context.services.get(serviceName).db(uuid).collection(collectionName).insertMany(insertData);
-    return insertResult
+    return true
 };
