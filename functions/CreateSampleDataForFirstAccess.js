@@ -23,7 +23,7 @@ exports = function({ body}, response) {
     .get("FAMILYSHAREDLISTBACKEND0")
     .db(uuid)
     .collection("Col_MyLists")
-    .count()
+    .estimatedDocumentCount();
 
     
     if (listCount === undefined) {
