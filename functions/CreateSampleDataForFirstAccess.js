@@ -22,7 +22,7 @@ exports = async function({ body}, response) {
 
     const doc = await context.services.get(serviceName).db(uuid).collection(collectionName).findOne();
     if (doc !== null) {
-     return false
+     return {"dataCreated": false}
     }
     
     const insertData = [
@@ -42,5 +42,5 @@ exports = async function({ body}, response) {
     
     
     const insertResult = await context.services.get(serviceName).db(uuid).collection(collectionName).insertMany(insertData);
-    return true
+    return {"dataCreated": true}
 };
