@@ -17,14 +17,15 @@ exports = function({ body}, response) {
     if (uuid === undefined) {
       throw new Error(`uuid was not defined.`);
     }
-    
-    const listDatabases = context.services
-      .get("FAMILYSHAREDLISTBACKEND0")
-      .adminCommand({listDatabases: 1});
       
-    const item = listDatabases.databases.find(e => e.name === uuid);
+    const myLists = context.services
+    .get("FAMILYSHAREDLISTBACKEND0")
+    .db(uuid)
+    .collection("Col_MyLists");
+      
+    console.log("myLists",myLists)
     
-    if (item === undefined) {
+    if (myLists === undefined) {
      return "database not exists"
     } else {
       return "database exists"
