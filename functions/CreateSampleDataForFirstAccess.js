@@ -28,16 +28,40 @@ exports = async function({ body}, response) {
     const insertData = [
       {
               "uuid": "sample1",
-              "name": "Bem vindo ao family share list",
+              "name": "Bem vindo ao family shared list",
               "isCompleted": false,
               "quantity": 1
       },
       {
               "uuid": "sample2",
-              "name": "deslize o item para o lado para excluir",
+              "name": "Sua lista de compras compartilhada",
               "isCompleted": false,
-              "quantity": 1
-      }
+              "quantity": 2
+      },
+      {
+              "uuid": "sample3",
+              "name": "Comparilhe com membros da sua familia de forma muito simples",
+              "isCompleted": false,
+              "quantity": 3
+      },
+      {
+              "uuid": "sample4",
+              "name": "Adicione um novo item, altere a quantidade e marque como comprado",
+              "isCompleted": false,
+              "quantity": 4
+      },
+      {
+              "uuid": "sample5",
+              "name": "Deslise para a esquerda para excluir!",
+              "isCompleted": false,
+              "quantity": 5
+      },
+      {
+              "uuid": "sample6",
+              "name": "Aproveite!!!!!",
+              "isCompleted": false,
+              "quantity": 6
+      },
     ];
     
     
