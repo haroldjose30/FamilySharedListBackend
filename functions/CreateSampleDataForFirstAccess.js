@@ -25,8 +25,8 @@ exports = function({ body}, response) {
      return `inserted new data: ${uuid}`
     }
     
-    return doc;
-    //return `listCount: ${doc} uuid:${uuid}`
+    //return doc;
+    return `listCount: ${doc} uuid:${uuid}`
    
 
   //collection.insertOne(fullDocument)
