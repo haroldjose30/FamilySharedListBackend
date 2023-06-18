@@ -25,7 +25,7 @@ exports = function({ body}, response) {
     .find()
     .count;
     
-    if (listCount === 0) {
+    if (listCount === undefined) {
      return "inserted new data"
     }
     
