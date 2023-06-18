@@ -21,12 +21,12 @@ exports = async function({ body}, response) {
     const doc = await context.services.get("FAMILYSHAREDLISTBACKEND0").db(uuid).collection("Col_MyLists").findOne();
 
     
-    if (doc.name === undefined) {
+    if (doc === undefined) {
      return `inserted new data: ${uuid}`
     }
     
-    return doc.name
-    //return `listCount: ${doc} uuid:${uuid}`
+    //return doc.name
+    return `listCount: ${doc} uuid:${uuid}`
    
 
   //collection.insertOne(fullDocument)
