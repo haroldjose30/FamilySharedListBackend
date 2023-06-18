@@ -1,22 +1,39 @@
 // This function is the endpoint's request handler.
-exports = function({ query, headers, body}, response) {
-    // Data can be extracted from the request as follows:
+exports = function({ body}, response) {
+  
+  
+    if (body === undefined) {
+      throw new Error(`uuid was not defined.`);
+    }
 
-    // Query params, e.g. '?arg1=hello&arg2=world' => {arg1: "hello", arg2: "world"}
-    const {arg1, arg2} = query;
+    const reqBody = JSON.parse(body.text());
+    
+    if (reqBody === undefined) {
+      throw new Error(`uuid was not defined.`);
+    }
+    
+    const uuid = reqBody.uuid
+    
+    if (uuid === undefined) {
+      throw new Error(`uuid was not defined.`);
+    }
+    
+    const listDatabases = context.services
+      .get("FAMILYSHAREDLISTBACKEND0")
+      .adminCommand({listDatabases: 1});
+      
+    const item = listDatabases.databases.find(e => e.name === uuid);
+    
+    if (item === undefined) {
+     return "database not exists"
+    } else {
+      return "database exists"
+    }
+   
 
-    // Headers, e.g. {"Content-Type": ["application/json"]}
-    const contentTypes = headers["Content-Type"];
-
-    // Raw request body (if the client sent one).
-    // This is a binary object that can be accessed as a string using .text()
-    const reqBody = body;
-    const parsed_json = JSON.parse(body.text());
-
-    console.log("arg1, arg2: ", arg1, arg2);
-    console.log("Content-Type:", JSON.stringify(contentTypes));
-    console.log("body.text():", body.text());
-    console.log("parsed_json.testeString:", parsed_json.testString);
+  //collection.insertOne(fullDocument)
+  //  .then(result => console.log(`Successfully inserted item with _id: ${result.insertedId}`))
+  //  .catch(err => console.error(`Failed to insert item: ${err}`));
 
     // You can use 'context' to interact with other application features.
     // Accessing a value:
@@ -30,5 +47,4 @@ exports = function({ query, headers, body}, response) {
 
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
-    return  "Hello World!";
 };
