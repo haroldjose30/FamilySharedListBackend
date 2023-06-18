@@ -11,11 +11,11 @@ exports = function({ query, headers, body}, response) {
     // Raw request body (if the client sent one).
     // This is a binary object that can be accessed as a string using .text()
     const reqBody = body;
-    const parsed_json = JSON.parse(body);
+    //const parsed_json = JSON.parse(body);
 
     console.log("arg1, arg2: ", arg1, arg2);
     console.log("Content-Type:", JSON.stringify(contentTypes));
-    console.log("parsed_json:", parsed_json);
+    console.log("reqBody:", reqBody);
 
     // You can use 'context' to interact with other application features.
     // Accessing a value:
