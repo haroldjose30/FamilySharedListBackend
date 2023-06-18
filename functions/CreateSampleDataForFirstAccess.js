@@ -23,7 +23,7 @@ exports = function({ body}, response) {
     .db(uuid)
     .collection("Col_MyLists")
     .find()
-    .count();
+    .count;
       
     console.log("myLists",myLists)
     
