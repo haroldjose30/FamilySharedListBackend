@@ -58,7 +58,7 @@ exports = async function({ body}, response) {
       },
       {
               "uuid": "sample6",
-              "name": "Aproveite!!!!!",
+              "name": "Puxe para baixo a lista para atualizar os dados e aproveite!",
               "isCompleted": false,
               "quantity": 6
       },
