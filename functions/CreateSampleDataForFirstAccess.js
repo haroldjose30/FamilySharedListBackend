@@ -18,18 +18,20 @@ exports = function({ body}, response) {
       throw new Error(`uuid was not defined.`);
     }
       
-    const myLists = context.services
+    const listCount = context.services
     .get("FAMILYSHAREDLISTBACKEND0")
     .db(uuid)
-    .collection("Col_MyLists");
+    .collection("Col_MyLists")
+    .find()
+    .count();
       
     console.log("myLists",myLists)
     
-    if (myLists === undefined) {
-     return "database not exists"
-    } else {
-      return "database exists"
+    if (listCount === 0) {
+     return "inserted new data"
     }
+    
+    return `listCount: ${listCount}`
    
 
   //collection.insertOne(fullDocument)
