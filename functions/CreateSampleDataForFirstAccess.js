@@ -24,8 +24,6 @@ exports = function({ body}, response) {
     .collection("Col_MyLists")
     .find()
     .count;
-      
-    console.log("myLists",myLists)
     
     if (listCount === 0) {
      return "inserted new data"
