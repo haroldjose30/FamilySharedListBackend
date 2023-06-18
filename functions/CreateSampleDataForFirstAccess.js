@@ -21,7 +21,7 @@ exports = async function({ body}, response) {
     const doc = await context.services.get("FAMILYSHAREDLISTBACKEND0").db(uuid).collection("Col_MyLists").findOne();
 
     
-    if (doc === undefined) {
+    if (doc === null) {
      return `inserted new data: ${uuid}`
     }
     
