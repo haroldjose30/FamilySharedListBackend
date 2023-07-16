@@ -29,5 +29,5 @@ exports = function({ query, headers, body}, response) {
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
     response.setStatusCode(200);
-    response.setBody(result);
+    response.setBody(JSON.stringify(result));
 };
