@@ -1,32 +1,78 @@
 // This function is the endpoint's request handler.
-exports = function({ query, headers, body}, response) {
-    // Data can be extracted from the request as follows:
+exports = async function({ body}, response) {
+  
+    const databaseConstants = context.values.get("DATABASE_CONSTANTS");
+    const serviceName = databaseConstants.ServiceName
+    const dbAccountMain = databaseConstants.Db_Account_Main
+    const colAccount = databaseConstants.Col_Account
+    return databaseConstants
+  
+    if (body === undefined) {
+      throw new Error(`body has not been set.`);
+    }
 
-    // Query params, e.g. '?arg1=hello&arg2=world' => {arg1: "hello", arg2: "world"}
-    const {arg1, arg2} = query;
+    const reqBody = JSON.parse(body.text());
+    
+    if (reqBody === undefined) {
+      throw new Error(`reqBody has not been set.`);
+    }
+    
+    const accountUuid = reqBody.accountUuid
+    
+    if (accountUuid === undefined) {
+      throw new Error(`accountUuid has not been set.`);
+    }
 
-    // Headers, e.g. {"Content-Type": ["application/json"]}
-    const contentTypes = headers["Content-Type"];
+    //verify if the account exists
+    const currentAccountDoc = await context.services
+                                    .get(serviceName)
+                                    .db(dbAccountMain)
+                                    .collection(colAccount)
+                                    .findOne({"uuid": accountUuid});
 
-    // Raw request body (if the client sent one).
-    // This is a binary object that can be accessed as a string using .text()
-    const reqBody = body;
+    if (accountDoc !== null) {
+        throw new Error(`account not found.`);
+    }
 
-    console.log("arg1, arg2: ", arg1, arg2);
-    console.log("Content-Type:", JSON.stringify(contentTypes));
-    console.log("Request body:", reqBody);
+    const code = reqBody.code
+    
+    if (code === undefined) {
+        throw new Error(`code has not been set.`);
+    }
 
-    // You can use 'context' to interact with other application features.
-    // Accessing a value:
-    // var x = context.values.get("value_name");
+    //verify if the code exists
+    const sharedAccountDoc = await context.services
+                                    .get(serviceName)
+                                    .db(dbAccountMain)
+                                    .collection(colAccount)
+                                    .findOne({"accountShortCodeForShare": code});
 
-    // Querying a mongodb service:
-    // const doc = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").findOne();
+    if (accountDoc !== null) {
+        throw new Error(`code not found.`);
+    }
 
-    // Calling a function:
-    // const result = context.functions.execute("function_name", arg1, arg2);
+    //update current account
+    currentAccountDoc.accountsSharedWithMe = [sharedAccountDoc.uuid];
+    await context.services
+                .get(serviceName)
+                .db(dbAccountMain)
+                .collection(colAccount)
+                .updateOne(
+                    {"uuid": accountUuid},
+                    { $set: { "accountsSharedWithMe": currentAccountDoc.accountsSharedWithMe } }
+                 );
 
-    // The return value of the function is sent as the response back to the client
-    // when the "Respond with Result" setting is set.
-    return  "Hello World!";
+    
+    //update shared account
+    sharedAccountDoc.myAccountIsSharedWith.push(accountUuid);
+    await context.services
+                .get(serviceName)
+                .db(dbAccountMain)
+                .collection(colAccount)
+                .updateOne(
+                    {"uuid": sharedAccountDoc.uuid},
+                    { $set: { "myAccountIsSharedWith": sharedAccountDoc.myAccountIsSharedWith } }
+                 );
+    
+    return {"result": true}
 };
