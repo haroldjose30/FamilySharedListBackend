@@ -25,7 +25,7 @@ exports = async function({ query, headers, body}, response) {
 
     // Calling a function:
     const result = await context.functions.execute("Function_Test", "hello from endpoint", "second arg", "other arg");
-    console.log("Function_Test: ",JSON.stringify(result))
+    console.log("Function_Test: ",JSON.stringify(result.result))
 
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
