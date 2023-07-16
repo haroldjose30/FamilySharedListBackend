@@ -2,6 +2,9 @@
     "from_secret": false,
     "name": "DATABASE_CONSTANTS",
     "value": {
-        "serviceName": "FAMILYSHAREDLISTBACKEND0"
+        "Col_Account": "Col_Account",
+        "Col_MyLists": "Col_MyLists",
+        "Db_Account_Main": "Db_Account_Main",
+        "ServiceName": "FAMILYSHAREDLISTBACKEND0"
     }
 }
