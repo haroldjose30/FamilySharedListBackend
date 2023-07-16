@@ -5,7 +5,7 @@ exports = async function({ body}, response) {
     const serviceName = databaseConstants.ServiceName
     const dbAccountMain = databaseConstants.Db_Account_Main
     const colAccount = databaseConstants.Col_Account
-    return databaseConstants
+    return {"tests" : [serviceName,dbAccountMain,colAccount]}
   
     if (body === undefined) {
       throw new Error(`body has not been set.`);
