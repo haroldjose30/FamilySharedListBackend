@@ -3,5 +3,10 @@
         "name": "CreateSampleDataForFirstAccess",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "SetSharedAccountByCode",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
