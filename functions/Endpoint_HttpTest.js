@@ -24,8 +24,8 @@ exports = async function({ query, headers, body}, response) {
     // const doc = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").findOne();
 
     // Calling a function:
-    const result = await context.functions.execute("Function_Test", "hello from endpoint");
-    console.log("Function_Test",JSON.stringify(result))
+    const result = await context.functions.execute("Function_Test", "hello from endpoint", "second arg", "other arg");
+    console.log("Function_Test: ",JSON.stringify(result))
 
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
