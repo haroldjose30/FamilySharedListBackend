@@ -29,7 +29,7 @@ exports = async function({ body}, response) {
                                     .collection(colAccount)
                                     .findOne({"uuid": accountUuid});
 
-    if (currentAccountDoc !== null) {
+    if (currentAccountDoc === null) {
         throw new Error(`account not found.`);
     }
 
@@ -46,7 +46,7 @@ exports = async function({ body}, response) {
                                     .collection(colAccount)
                                     .findOne({"accountShortCodeForShare": code});
 
-    if (accountDoc !== null) {
+    if (sharedAccountDoc === null) {
         throw new Error(`code not found.`);
     }
 
