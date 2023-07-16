@@ -24,10 +24,10 @@ exports = function({ query, headers, body}, response) {
     // const doc = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").findOne();
 
     // Calling a function:
-    // const result = context.functions.execute("function_name", arg1, arg2);
+    const result = context.functions.execute("Function_Test", "hello from endpoint");
 
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
-    response.setStatusCode(400);
-    return  "response is 400";
+    response.setStatusCode(200);
+    response.setBody(result);
 };

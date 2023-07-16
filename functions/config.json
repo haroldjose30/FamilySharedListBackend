@@ -1,16 +1,21 @@
 [
     {
-        "name": "CreateSampleDataForFirstAccess",
+        "name": "Endpoint_CreateSampleDataForFirstAccess",
         "private": false,
         "disable_arg_logs": true
     },
     {
-        "name": "SetSharedAccountByCode",
+        "name": "Endpoint_SetSharedAccountByCode",
         "private": false,
         "disable_arg_logs": true
     },
     {
-        "name": "httptest",
+        "name": "Endpoint_HttpTest",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "Function_Test",
         "private": false,
         "disable_arg_logs": true
     }
