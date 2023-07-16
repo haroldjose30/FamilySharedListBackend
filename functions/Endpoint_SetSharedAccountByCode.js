@@ -29,7 +29,7 @@ exports = async function({ body}, response) {
                                     .collection(colAccount)
                                     .findOne({"uuid": accountUuid});
 
-    if (accountDoc !== null) {
+    if (currentAccountDoc !== null) {
         throw new Error(`account not found.`);
     }
 
