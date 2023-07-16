@@ -1,0 +1,7 @@
+{
+    "from_secret": false,
+    "name": "DATABASE_CONSTANTS",
+    "value": {
+        "serviceName": "FAMILYSHAREDLISTBACKEND0"
+    }
+}
