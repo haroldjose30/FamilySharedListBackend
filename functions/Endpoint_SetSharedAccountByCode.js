@@ -63,7 +63,10 @@ exports = async function({ body}, response) {
 
     
     //update shared account
-    sharedAccountDoc.myAccountIsSharedWith.push(accountUuid);
+    if (!sharedAccountDoc.myAccountIsSharedWith.includes(accountUuid)) {
+      sharedAccountDoc.myAccountIsSharedWith.push(accountUuid); 
+    }
+    
     await context.services
                 .get(serviceName)
                 .db(dbAccountMain)
