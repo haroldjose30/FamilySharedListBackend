@@ -1,5 +1,5 @@
 // This function is the endpoint's request handler.
-exports = function({ query, headers, body}, response) {
+exports = async function({ query, headers, body}, response) {
     // Data can be extracted from the request as follows:
 
     // Query params, e.g. '?arg1=hello&arg2=world' => {arg1: "hello", arg2: "world"}
@@ -24,7 +24,8 @@ exports = function({ query, headers, body}, response) {
     // const doc = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").findOne();
 
     // Calling a function:
-    const result = context.functions.execute("Function_Test", "hello from endpoint");
+    const result = await context.functions.execute("Function_Test", "hello from endpoint");
+    console.log("Function_Test",result)
 
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
