@@ -28,7 +28,7 @@ exports = async function ({ body }, response) {
         const insertData = [
                 {
                         "uuid": "lesson01",
-                        "name": "01: Bem vindo ao tutorial Family List! Seu app de lista de compras compartilhada com a sua família!",
+                        "name": "01: Bem vindo ao tutorial Family List!",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": false,
@@ -44,7 +44,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson02",
-                        "name": "02: Clique na imagem para ampliar, em seguida arraste p/ esquerda e remova cada tutorial aprendido!",
+                        "name": "02: Clique na imagem p/ ampliar, arraste p/ esquerda para excluir!",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": false,
@@ -60,7 +60,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson03",
-                        "name": "03: Experimente Adicionar um item pela decrição ou qrcode usando as opções no final da tela!",
+                        "name": "03: Adicione um item usando as opções no final da página!",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": false,
@@ -76,7 +76,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson04",
-                        "name": "04: Vamos alterar quantidade do item adicionado? é muito simples basta clicar no - ou +",
+                        "name": "04: Para alterar a quantidade basta clicar no - ou +",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": false,
@@ -92,7 +92,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson05",
-                        "name": "05: Clique no 'carrinho de compras' para enviar para a aba Priorizado. Depois clique na aba corespondente!",
+                        "name": "05: Clique no 'carrinho de compras', depois clique em 'Priorizado'",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": false,
@@ -124,7 +124,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson07",
-                        "name": "07: Faça o mesmo para informar o preço, pressione e segure sobre, e poderá conferir no caixa o valor total!",
+                        "name": "07: Faça o mesmo com o preço. Poderá conferir no caixa o valor total!",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": true,
@@ -140,7 +140,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson08",
-                        "name": "08: Clique no 'check' e depois na aba 'comprado' para ver os itens que já foram adquiridos!",
+                        "name": "08: Clique no 'check' e depois em 'Comprado' para ver os itens adquiridos!",
                         "isCompleted": false,
                         "isCompletedDate": null,
                         "isPrioritized": true,
@@ -156,7 +156,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson09",
-                        "name": "09: Use o QRCode para complementar os dados do produto esta função adicionará imagem e descrição.",
+                        "name": "09: Ler o QRCode adicionará imagem e descrição ao item",
                         "isCompleted": true,
                         "isCompletedDate": "2024-04-14T10:46:00.522593",
                         "isPrioritized": false,
@@ -172,7 +172,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson10",
-                        "name": "10: Compartilhe sua lista com familiares! Clique no ícone de configurações depois em 'Compartilhar minha conta'!",
+                        "name": "10: Seu código pode ser compartilhado no meu 'engrenagem' e em 'Compartilhar minha conta'",
                         "isCompleted": true,
                         "isCompletedDate": "2024-04-14T10:46:00.522593",
                         "isPrioritized": false,
@@ -188,7 +188,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson11",
-                        "name": "11: Para acessar uma lista de outro familiar basta digitar o código da conta!",
+                        "name": "11: Para acessar outra lista basta digitar o código da conta desejada!",
                         "isCompleted": true,
                         "isCompletedDate": "2024-04-14T10:46:00.522593",
                         "isPrioritized": false,
@@ -204,7 +204,7 @@ exports = async function ({ body }, response) {
                 },
                 {
                         "uuid": "lesson12",
-                        "name": "12: Experimente a opção de inclusão rápida de itens, basta clicar no ícone de lista no canto superior direito!",
+                        "name": "12: Existe uma opção de inclusão rápida ao clicar no ícone de lista+!",
                         "isCompleted": true,
                         "isCompletedDate": "2024-01-10T10:46:00.522593",
                         "isPrioritized": false,
@@ -217,6 +217,16 @@ exports = async function ({ body }, response) {
                                 "imageUrl": "https://haroldjose.dev/images/projects/familylist/lessons/lesson12.png",
                                 "productName": "lesson12"
                         }
+                },
+                {
+                        "uuid": "lesson13",
+                        "name": "13: Concluimos o tutorial! Agora é só usar com a família!",
+                        "isCompleted": true,
+                        "isCompletedDate": "2024-01-10T10:46:00.522593",
+                        "isPrioritized": false,
+                        "quantity": 1,
+                        "price": 4.10,
+                        "product": null
                 },
                 
         ];
